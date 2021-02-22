@@ -4,6 +4,7 @@
 ## AAE
 采用对抗自编码器(Adversarial Auto Encoder)进行采样的代码
 ## Concat Me
+Justus  
 12032042@zju.edu.cn
 ## Copyright
 No reprobaiction without permission. Please indicate the source if authorized.  
