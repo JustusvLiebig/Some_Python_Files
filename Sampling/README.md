@@ -5,3 +5,6 @@
 采用对抗自编码器(Adversarial Auto Encoder)进行采样的代码
 ## Concat Me
 12032042@zju.edu.cn
+## Copyright
+No reprobaiction without permission. Please indicate the source if authorized.  
+未经许可, 严禁转载。 转载请说明出处。
