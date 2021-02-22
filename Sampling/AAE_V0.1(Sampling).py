@@ -1,35 +1,9 @@
-import os
 import torch
 import torch.nn as nn
 import numpy as np
 import pandas as pd
-import torchvision
-import torchvision.transforms as transforms
 from torch.autograd import Variable
-
-from torchvision.utils import save_image
 from torch.utils.data import Dataset, DataLoader
-
-# 创建文件
-folder = os.getcwd() + '\\Fake_images'
-# folder = os.getcwd() + '\\DAG_From(StandardScaler)'
-if not os.path.exists(folder):
-    os.makedirs(folder)
-
-# MNIST Dataset
-dataset = torchvision.datasets.MNIST(root='./data', train=True, transform=transforms.ToTensor(), download=True)
-
-# Data Loader (Input Pipeline)
-data_loader = torch.utils.data.DataLoader(dataset=dataset, batch_size=100, shuffle=True)
-
-def to_np(x):
-    return x.data.cpu().numpy()
-
-def to_var(x):
-    if torch.cuda.is_available():
-        x = x.cuda()
-    return Variable(x)
-
 
 class MyDataset(Dataset):
 
