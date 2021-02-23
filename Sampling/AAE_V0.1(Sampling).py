@@ -195,7 +195,10 @@ class AAEModel():
         return self
 
     def generate(self, sample_number=1000):
-
+        
+        # 卡住随机种子编号, 保证结果重复性
+        np.random.seed(self.seed)
+        
         if self.z_dim is 1:
             X = np.random.normal(loc=0.0, scale=1.0, size=sample_number)
         else:
