@@ -1,4 +1,6 @@
 # 一些Scenario Generation的代码
+## Cluster Code
+先针对数据做聚类(KMeans与GMM方法),聚类后再做数据生成,这样效果会比较好
 ## VAE  
 采用变分自编码器(Variational Auto Encoder)进行采样的代码  
 ## AAE
