@@ -12,6 +12,7 @@
 * [Control Engineering Practice](https://www.journals.elsevier.com/control-engineering-practice)
 * [IFAC-Papers On line](https://www.sciencedirect.com/journal/ifac-papersonline)
 * [Engineering Applications of Artificial Intelligence](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence)
+* [Chemometrics and Intelligent Laboratory Systems](https://www.journals.elsevier.com/chemometrics-and-intelligent-laboratory-systems)
 ## IEEE旗下跟工业相关的(IEEE 服务器出问题了,暂时访问不了)
 * [Journal of Process Control]
 * [Control Engineering Practice]
