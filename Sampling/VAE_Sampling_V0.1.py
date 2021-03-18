@@ -151,18 +151,32 @@ class VAE_Sampling(BaseEstimator, RegressorMixin):
 
     # 实操数据
     def generate(self, sample_number=1000):
+        
         # 卡住随机种子编号, 保证结果重复性
         np.random.seed(self.seed)
-        X = np.random.normal(loc=0.0, scale=1.0, size=sample_number)
-        # 输入张量维度做修正
-        X = X.reshape((-1, 1))
+        # 判别到底是一维还是多维的
+        if self.z_dim is 1:
+            X = np.random.normal(loc=0.0, scale=1.0, size=sample_number)
+        else:
+            mean = np.zeros(self.z_dim)
+            # mean = np.array([self.z_dim, 0])
+            cov = np.eye(self.z_dim)
+            X = np.random.multivariate_normal(mean=mean, cov=cov, size=sample_number)
+
+        # 放上torch框架
         X = torch.tensor(X, dtype=torch.float32, device=self.device)
-        self.VAE_Model.eval()
+
+        # 重构维度确保没出岔子
+        X = X.view(sample_number, self.z_dim)
+
         with torch.no_grad():
             # 生成数据
-            X_generate = self.VAE_Model(inputs=X, generate=True).cpu().numpy()
+            X_generate =self.VAE_Model(inputs=X, generate=True).cpu().numpy()
             # 生成结果
             X_generate = self.scaler_X.inverse_transform(X_generate)
+
+        print('Scenario generate finished')
+
         return X_generate
 
 # 数据读取及其对应的实操
